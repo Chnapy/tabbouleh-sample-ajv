@@ -1,23 +1,33 @@
 import Tabbouleh from "tabbouleh";
-import Ajv from 'ajv';
+import Ajv, {ErrorObject} from 'ajv';
 import {UserData} from "./UserData";
+import {DOMInit} from "./domManipulation";
 
+// generate the UserData schema
 const schema = Tabbouleh.generateJSONSchema(UserData);
+console.log('schema:', schema);
 
-console.log(schema);
-
+// instantiate AJV & compile the schema
 const ajv = new Ajv();
 const validate = ajv.compile(schema);
-const valid = validate({
-    name: 'toto',
-    age: 45,
+
+const defaultData: UserData = {
+    name: 'Toto',
+    age: 28,
     address: {
-
+        city: 'Paris',
+        street: '56 rue Saint Martin'
     }
-});
+};
 
-console.log(valid, validate.errors);
+// validate data with AJV
+function doValidate(data: object): { valid: boolean; errors: ErrorObject[] } {
+    const valid = validate(data) as boolean;
 
-document.body.append(
-    JSON.stringify(schema)
-);
+    return {
+        valid,
+        errors: validate.errors || []
+    };
+}
+
+DOMInit(schema, defaultData, doValidate);
