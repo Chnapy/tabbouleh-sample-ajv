@@ -8,6 +8,8 @@ const stateOutput = document.getElementById('state-output') as HTMLDivElement;
 function onSuccess() {
     stateOutput.classList.remove('error');
     stateOutput.classList.add('success');
+
+    stateOutput.innerHTML = '';
 }
 
 function onError(errors: Pick<ErrorObject, 'dataPath' | 'message'>[]) {
