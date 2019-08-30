@@ -30,6 +30,7 @@
             padding: 1.5em .5em .5em;
             margin: .25em;
             border: 1px solid #CCC;
+            font-size: 87.5%;
         }
 
         #data-input {
@@ -78,12 +79,22 @@
             background: white;
         }
 
+        label[for="data-input"] {
+            top: 1px;
+            left: 1px;
+        }
+
         #schema-output::before {
             content: 'Schema';
         }
 
         #state-output::after {
             content: 'State';
+        }
+
+        .links {
+            text-align: center;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -103,9 +114,16 @@
 
     <div id="state-output"></div>
 
+<div class="links">
+    <a href="https://github.com/Chnapy/tabbouleh">tabbouleh</a>
+    +
+    <a href="https://github.com/epoberezkin/ajv">ajv</a>
 </div>
 
-<script src="vendor.a6bec84352ff27937b25.js?5c7f657511321a46858a"></script>
-<script src="main.2df415c1cb9127210ee1.js?5c7f657511321a46858a"></script>
+
+</div>
+
+<script src="vendor.a6bec84352ff27937b25.js?4d7e3a869189197120d5"></script>
+<script src="main.2df415c1cb9127210ee1.js?4d7e3a869189197120d5"></script>
 </body>
 </html>
