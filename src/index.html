@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,6 @@
     <title>Tabbouleh sample AJV</title>
 
     <style>
-
         body {
             font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
             font-size: 14px;
@@ -26,7 +26,10 @@
             flex-flow: wrap;
         }
 
-        #data-input, #schema-output, #state-output, label[for="data-input"] {
+        #data-input,
+        #schema-output,
+        #state-output,
+        label[for="data-input"] {
             padding: 1.5em .5em .5em;
             margin: .25em;
             border: 1px solid #CCC;
@@ -67,7 +70,9 @@
             content: 'Error with the data ✘';
         }
 
-        label[for="data-input"], #schema-output::before, #state-output::after {
+        label[for="data-input"],
+        #schema-output::before,
+        #state-output::after {
             position: absolute;
             top: 0;
             left: 0;
@@ -101,29 +106,28 @@
 
 <body>
 
-<div id="container-v">
+    <div id="container-v">
 
-    <div id="container-h">
+        <div id="container-h">
 
 
-        <label for="data-input">Data</label><textarea id="data-input"></textarea>
+            <label for="data-input">Data</label><textarea id="data-input"></textarea>
 
-        <pre id="schema-output"></pre>
+            <pre id="schema-output"></pre>
+
+        </div>
+
+        <div id="state-output"></div>
+
+        <div class="links">
+            <a href="https://github.com/Chnapy/tabbouleh">tabbouleh</a>
+            +
+            <a href="https://github.com/epoberezkin/ajv">ajv</a>
+        </div>
+
 
     </div>
 
-    <div id="state-output"></div>
-
-<div class="links">
-    <a href="https://github.com/Chnapy/tabbouleh">tabbouleh</a>
-    +
-    <a href="https://github.com/epoberezkin/ajv">ajv</a>
-</div>
-
-
-</div>
-
-<script src="<%= htmlWebpackPlugin.files.chunks.vendor.entry %>"></script>
-<script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
+
 </html>
